@@ -47,7 +47,7 @@ function App() {
 
   //Para actualiza la info
   const updateUserById = (id, data) => {
-    const URL = `${baseURL}/users/${id}`
+    const URL = `${baseURL}/users/${id}/`
 
     axios.patch(URL, data)
     .then(res => {
@@ -56,8 +56,6 @@ function App() {
     })
     .catch(err => console.log(err))
   }
-
-  console.log(updateInfo)
 
   return (
     <div className="App">

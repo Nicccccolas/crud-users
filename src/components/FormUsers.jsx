@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 
-const defaultValues = {
+  const defaultValues = {
   email: '',
   password: '',
   first_name: '',
@@ -11,35 +11,30 @@ const defaultValues = {
 
 const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo}) => {
 
-  const { handleSubmit, reset, register } = useForm()
+  const { handleSubmit, register, reset } = useForm()
   
   const formData = useRef() 
 
   useEffect(() => {
     if (updateInfo) {
-        formData.current.email.value = updateInfo.email
-        formData.current.password.value = updateInfo.password
-        formData.current.first_name.value = updateInfo.first_name
-        formData.current.last_name.value = updateInfo.last_name
-        formData.current.birthday.value = updateInfo.birthday
+        reset(updateInfo)
       }
   }, [updateInfo])
 
   const submit = data => {
-    console.log(data)
-    if (updateInfo){
-      updateUserById(updateInfo.id)
+    if(updateInfo){
+      updateUserById(updateInfo.id, data)
       setUpdateInfo()
-    }else {
+    } else {
       createNewUser(data)
     }
-    reset(defaultValues)
+      reset(defaultValues)
   }
 
 
   return (
     <form className='form' ref={formData} onSubmit={handleSubmit(submit)}>
-      <h2 className='form_title'>{updateInfo ? 'Update this card' : 'Create a new card'}</h2>
+      <h2 className='form_title'>{updateInfo ? 'Update this user' : 'New user'}</h2>
       <div className='form_input'>
         <label htmlFor="email">Email</label>
         <input type="email" id='email' {...register('email')} />

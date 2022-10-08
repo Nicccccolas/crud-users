@@ -1,15 +1,54 @@
-
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.users-container {
+  display: flex;
+  margin: 1rem;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.card {
-  padding: 2em;
+.form-container{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0003;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.disable-form {
+  display: none;
+}
+
+.App_container-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App_btn{
+  width: 100%;
+  max-width: 16rem;
+  padding: .8rem;
+  background-color: #ccc7;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 150ms , box-shadow 150ms ease;
+}
+
+.App_btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 .8rem #0005;
+  transition: transform 150ms , box-shadow 150ms ease;
 }

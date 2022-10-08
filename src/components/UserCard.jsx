@@ -1,21 +1,41 @@
 import React from 'react'
+import './styles/cardUser.css'
 
-const UserCard = ({ user, deleteUserById, updateUserById, setUpdateInfo }) => {
+const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose }) => {
 
-  const getInfoUpdate = () => {
+  const handleEdit = () => {
     setUpdateInfo(user)
+    setFormIsClose(false)
   }
 
+
+
   return (
-    <article className='card'>
-      <h2 className='card_title'>{`${user.first_name} ${user.last_name}`}</h2>
-      <ul className='card_list'>
-        <li className='card_items'><span className='card_span'>Email</span>{user.email}</li>
-        <li className='card_items'><span className='card_span'>Birthday</span>{user.birthday}</li>
+    <article className='user'>
+      <h2 className='user_name'>{`${user.first_name} ${user.last_name}`}</h2>
+      <ul className='user_list'>
+        <li
+          className='user_item'>
+          <span className='user_span'>Email</span>{user.email}
+        </li>
+        <li
+          className='user_item'><span className='user_span'>Birthday</span>
+          <div className='user_item-container'>
+            <i className="user_gift fa-solid fa-gift"></i> {user.birthday}
+          </div>
+        </li>
       </ul>
-      <footer>
-        <i onClick={() => deleteUserById(user.id)} className="fa-solid fa-dumpster" ></i>
-        <i onClick={getInfoUpdate} className="fa-regular fa-pen-to-square"></i>
+      <footer className='user_footer'>
+        <button className='user_btn' onClick={() => deleteUserById(user.id)}>
+        <i
+          className="user_trash fa-solid fa-dumpster" >
+        </i>
+        </button>
+        <button className='user_btn' onClick={handleEdit}>
+          <i
+          className="user_edit fa-regular fa-pen-to-square">
+        </i>
+        </button>
       </footer>
     </article>
   )

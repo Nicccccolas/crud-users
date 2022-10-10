@@ -1,31 +1,37 @@
 .user {
-  background-color: white;
+  background-color: var(--card-bcgn);
   padding: 1.1rem;
-  border: 1px solid #ccc9;
-  border-radius: .6rem;
+  border: 1px solid var(--accent-color);
+  border-radius: .2rem;
   width: 100%;
   max-width: 400px;
 }
 
+.dark-mode .user {
+  background-color: #38434f;
+  color: aliceblue;
+}
+
 .user:hover{
-  box-shadow: 0 0 10px #0005;
+  box-shadow: 0 0 10px var(--accent-color);
   transition: box-shadow 200ms ease;
 }
 
 .user_name {
-  font-weight: 500;
-  padding-bottom: .5rem;
+  font-weight: 700;
+  padding: .4rem 0 .5rem 1rem;
   margin-bottom: .5rem;
-  border-bottom: 1px solid #ccc9;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .user_list{
   display: grid;
   gap: 0.9rem;
   padding-bottom: 1rem;
+  padding-left: 2rem;
   margin-bottom: 1rem;
   gap: .8rem;
-  border-bottom: 1px solid #ccc9
+  border-bottom: 1px solid var(--accent-color)
 }
 .user_item {
   display: flex;
@@ -35,8 +41,8 @@
 
 }
 .user_span {
-  color:  #aaa;
-  font-weight: 300;
+  color:var(--accent-color);
+  font-weight:400;
   text-transform: uppercase;
 }
 
@@ -49,27 +55,29 @@
   display: flex;
   gap: 0.8rem;
   justify-content: flex-end;
+  padding-right: 1rem;
 }
 
 .user_btn {
-  width: 2rem;
+  width: 2.2rem;
   aspect-ratio: 1;
-  border-radius: .4rem;
+  border-radius: 2rem;
   cursor: pointer;
   transition: transform 200ms ease;
 }
 .user_btn:hover{
-  box-shadow: 0 0 10px #0005;
+  box-shadow: 0 0 5px var(--accent-color);
   transform: scale(1.09);
   transition: transform 200ms ease;
 }
 
 .user_btn:first-child{
   color: white;
-  background-color: #d85d5d;
+  background-color: var(--accent-color);
 }
 
 .user_btn:last-child{
-  color: black;
-  border: 1px solid #ccc9;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  background-color: whitesmoke;
 }

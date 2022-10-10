@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700;900&display=swap');
+:root{
+
+  background-color: var(--app-bcgn);
+  color: var(--font-color);
+  --app-bcgn: whitesmoke;
+  --card-bcgn: rgb(218, 218, 218); 
+  --accent-color: #5d93c9;
+  --first-text-color:  #1d2227;
+  --second-text-color: #bcbdbe;
+
+  
+  /* --bcgn-color: var(--app-bcgn); */
+  --second-bcgn-color: var(--app-bcgn);
+  --font-color: var(--first-text-color);
+
+}
+
 
 /* ---- RESET ---- */
 * {
@@ -6,8 +23,14 @@
   font-family: 'Roboto Mono', monospace;
 }
 body {
+  background-color: var(--app-bcgn);
   margin: 0;
 }
+
+body.dark-mode {
+  background-color: #000;
+}
+
 h1, h2, h3, h4, p, ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -22,4 +45,6 @@ button {
 input {
   outline: none;
 }
+
+
 

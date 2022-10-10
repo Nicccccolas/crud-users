@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
 import FormUsers from './components/FormUsers'
+import Header from './components/Header'
 import UserCard from './components/UserCard'
 
 const baseURL = 'https://users-crud1.herokuapp.com'
@@ -66,9 +67,10 @@ function App() {
 
   return (
     <div className="App">
+      <Header/>
       <div className='App_container-title'>
-        <h1 className='App_title'>Users CRUD</h1>
-        <button onClick={handleOpenForm} className='App_btn'>Create a new user</button>
+        <h1 className='App_title'>Personal Info</h1>
+        <button onClick={handleOpenForm} className='App_btn'>New User</button>
       </div>
       <div className={`form-container ${formIsClose && 'disable-form'}`}>
         <FormUsers

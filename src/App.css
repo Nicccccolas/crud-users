@@ -28,7 +28,7 @@
 .App{
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: fit-content
 }
 
 .App_container-title{

@@ -28,12 +28,13 @@ const FormUsers = ({ createNewUser, updateInfo, updateUserById, setUpdateInfo, s
     } else {
       createNewUser(data)
     }
-      reset(defaultValues)
       setFormIsClose(true)
-  }
+      reset(defaultValues)
+    }
 
   const handleCloseForm = () => {
     setFormIsClose(true)
+    reset(defaultValues)
   }
 
   return (

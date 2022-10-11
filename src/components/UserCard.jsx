@@ -11,8 +11,21 @@ const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose }) => {
 
   const handleDelete = () => {
     Swal.fire({
-      title: 'Do you want to delete this user?',
+      title: 'Are you sure to delete this user?',
+      width:'70%',
+      padding:'.5rem',
+      background:'rgb(218, 218, 218)',
+      backdrop:'true',
+      position:'center',
+      allowOutsideClick:false,
+      allowEscapeKey: true,
       showCancelButton: true,
+      customClass:{
+        popup:'alert-popup',
+        confirmButton: 'alert_btn',
+        cancelButton: 'alert_btn',
+      },
+      buttonsStyling: false,
       confirmButtonColor: '#5d93c9',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Confirm'

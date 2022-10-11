@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles/cardUser.css'
+import Swal from 'sweetalert2'
 
 const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose }) => {
 
@@ -8,8 +9,24 @@ const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose }) => {
     setFormIsClose(false)
   }
 
-
-
+  const handleDelete = () => {
+    Swal.fire({
+      title: 'Do you want to delete this user?',
+      showCancelButton: true,
+      confirmButtonColor: '#5d93c9',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirm'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'User has been deleted.',
+        )
+        deleteUserById(user.id)
+      }
+    })
+  }
+  
   return (
     <article className='user'>
       <h2 className='user_name'>{`${user.first_name} ${user.last_name}`}</h2>
@@ -26,7 +43,7 @@ const UserCard = ({ user, deleteUserById, setUpdateInfo, setFormIsClose }) => {
         </li>
       </ul>
       <footer className='user_footer'>
-        <button className='user_btn' onClick={() => deleteUserById(user.id)}>
+        <button className='user_btn' onClick={handleDelete}>
         <i
           className="user_trash fa-solid fa-dumpster" >
         </i>

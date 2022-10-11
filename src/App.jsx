@@ -67,9 +67,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
       <div className='App_container-title'>
-        <h1 className='App_title'>Personal Info</h1>
+        <div className='App_toggler'>
+          <h1 className='App_title'>Personal Info</h1>
+          <Header/>
+        </div>
         <button onClick={handleOpenForm} className='App_btn'>New User</button>
       </div>
       <div className={`form-container ${formIsClose && 'disable-form'}`}>
@@ -94,7 +96,6 @@ function App() {
           ))
         }
       </div>
-
     </div>
   )
 }

@@ -20,7 +20,7 @@ function Header() {
   }, [darkMode])
   
   return (
-    <header>
+    <header className="header">
       <div
         id="toggle"
         onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}

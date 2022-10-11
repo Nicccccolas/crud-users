@@ -1,7 +1,5 @@
 .header {
-  max-width: max-content;
-  position: absolute;
-  z-index: 2;
+  margin: 0
 }
 
 #toggle {

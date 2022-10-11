@@ -1,10 +1,12 @@
 @media (min-width: 550px){
   .users-container {
+    padding-bottom: 2rem;
     display: flex;
-    margin: 1rem;
+    margin: 1rem 2rem 0 2rem;
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+
   }
   
   .form-container{
@@ -28,7 +30,10 @@
   
   .App{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
+  }
+  .dark-mode.App{
+    background-color: rgba(0, 0, 0, 0.151);
   }
   
   .App_container-title{
@@ -187,4 +192,16 @@
   
 }
 
-
+/* .App {
+  padding-top: 50px;
+}
+@media (min-height: 1001px) {
+  .App{
+    height:100vh;
+  }
+}
+@media (max-height: 1000px) {
+  .App{
+    height: 100%;
+  }
+} */
